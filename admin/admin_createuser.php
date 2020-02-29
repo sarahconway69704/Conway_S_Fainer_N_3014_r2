@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
     if(empty($email) || empty($username) || empty($fname)){
         $message = 'Please fill the required fields';
     }else{
-        $message = createUser($fname, $username, $password, $email);
+        $message = createUser($fname, $username, $email);
     }
 }
 
