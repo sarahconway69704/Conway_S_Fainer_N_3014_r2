@@ -1,4 +1,5 @@
 <?php 
+require '../phpmailer/PHPMailerAutoload.php';
 function createUser($fname, $username, $email){
     $pdo = Database::getInstance()->getConnection();
     
@@ -24,9 +25,37 @@ function createUser($fname, $username, $email){
      //TODO: redirect to index.php if creat user successfully
     // otherwise, return a error message
     if($create_user_result){
+    
 
+        $mail = new PHPMailer;
+
+        // use this line only for local host. 
+        $mail->isSMTP();
+        // ^^^^^^^^^^^^^^^^^
+
+        $mail->Host='smtp.gmail.com';
+        $mail->Port=587;
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'tls';
         
-        //redirect_to('index.php');
+        $mail->Username='noah.fainer@gmail.com';
+        $mail->Password='bimcheese123';
+        
+        $mail->setFrom('noah.fainer@gmail.com');
+        $mail->addAddress($email);
+        $mail->addReplyTo('noah.fainer@gmail.com');
+
+        $mail->isHTML(true);
+        $mail->Subject='PHP Mailer';
+        $mail->Body='<h1 align=center>Noah and Sarah says hi</h1>';
+
+        if(!$mail->send()){
+            echo 'message was not able to send';
+        } else{
+            echo 'great success';
+        }
+
+        redirect_to('index.php');
 
 
     }else{
