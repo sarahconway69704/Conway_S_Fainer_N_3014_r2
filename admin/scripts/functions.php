@@ -7,7 +7,6 @@ function redirect_to($location){
     }
 }
 
-function randomChars($str, $numChars){
-    //Return the characters.
-    return substr(str_shuffle($str), 0, $numChars);
+function randString($str, $numString){
+    return substr(str_shuffle($str), 0, $numString);
 }

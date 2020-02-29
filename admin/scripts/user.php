@@ -8,7 +8,7 @@ function createUser($fname, $username, $email){
     $create_user_query .= ' VALUES(:fname, :username, :password, :email, "no" )';
     
     $string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-    $randPassword = randomChars($string, 8);
+    $randPassword = randString($string, 8);
 
     $create_user_set = $pdo->prepare($create_user_query);
     $create_user_result = $create_user_set->execute(
