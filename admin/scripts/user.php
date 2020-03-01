@@ -11,12 +11,15 @@ function createUser($fname, $username, $email){
     $string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
     $randPassword = randString($string, 8);
 
+
+    $encryptPw = password_hash($randPassword, PASSWORD_DEFAULT);
+
     $create_user_set = $pdo->prepare($create_user_query);
     $create_user_result = $create_user_set->execute(
         array(
             ':fname'=>$fname,
             ':username'=>$username,
-            ':password'=>$randPassword,
+            ':password'=>$encryptPw,
             ':email'=>$email,
 
          
@@ -64,4 +67,5 @@ function createUser($fname, $username, $email){
     }else{
         return 'The user did not go through';
     }
+
 }
