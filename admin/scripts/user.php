@@ -47,7 +47,10 @@ function createUser($fname, $username, $email){
 
         $mail->isHTML(true);
         $mail->Subject='PHP Mailer';
-        $mail->Body='<h1 align=center>Noah and Sarah says hi</h1>';
+        $mail->Body='<h1 align=center>Noah and Sarah says hi </h1>
+        <h1>Your username is: </h1>' . $username . 
+        '<h1>Your password is: </h1>' . $randPassword . 
+        '<h2>To login, go here: http://localhost:8888/Conway_S_Fainer_N_3014_r2/admin/admin_login.php</h2>';
 
         if(!$mail->send()){
             echo 'message was not able to send';
