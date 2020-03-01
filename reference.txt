@@ -1,0 +1,8 @@
+﻿https://www.w3schools.com/php/func_mail_mail.asp
+https://www.youtube.com/watch?v=hLuPFzHQ8Xo
+https://www.php.net/manual/en/function.str-shuffle.php
+https://www.php.net/manual/en/function.substr.php
+https://www.w3resource.com/php-exercises/php-string-exercise-9.php
+https://thisinterestsme.com/php-random-character-string/
+https://www.youtube.com/watch?v=Qq96ZgiY1dY&t=398s
+https://deliciousbrains.com/php-encryption-methods/
