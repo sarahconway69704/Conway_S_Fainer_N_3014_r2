@@ -5,7 +5,7 @@
 
     if(isset($_POST['submit'])){
         $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
+        $password = password_verify(trim($_POST['password']), $encryptPw);
 
         if(!empty($username) && !empty($password)){
             //Log user in
