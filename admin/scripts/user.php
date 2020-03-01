@@ -3,15 +3,17 @@ require '../phpmailer/PHPMailerAutoload.php';
 function createUser($fname, $username, $email){
     $pdo = Database::getInstance()->getConnection();
     
-    //TODO: finish the below so that it can run a SQL query
+
     // to create a new user with provided data
     $create_user_query = 'INSERT INTO tbl_user(user_fname, user_name, user_pass, user_email, user_ip)';
     $create_user_query .= ' VALUES(:fname, :username, :password, :email, "no" )';
     
+    // Make a string variable
     $string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    // Call on the function that randomizes the string and set the length of it
     $randPassword = randString($string, 8);
 
-
+    // encrypt password
     $encryptPw = password_hash($randPassword, PASSWORD_DEFAULT);
 
     $create_user_set = $pdo->prepare($create_user_query);
@@ -25,8 +27,8 @@ function createUser($fname, $username, $email){
          
         )
     );
-     //TODO: redirect to index.php if creat user successfully
-    // otherwise, return a error message
+
+
     if($create_user_result){
     
 
