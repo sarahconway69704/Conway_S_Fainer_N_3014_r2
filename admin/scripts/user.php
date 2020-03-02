@@ -41,12 +41,12 @@ function createUser($fname, $username, $email){
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'tls';
         
-        $mail->Username='noah.fainer@gmail.com';
+        $mail->Username='cfs.noahfainer@gmail.com';
         $mail->Password='bimcheese123';
         
-        $mail->setFrom('noah.fainer@gmail.com');
+        $mail->setFrom('cfs.noahfainer@gmail.com');
         $mail->addAddress($email);
-        $mail->addReplyTo('noah.fainer@gmail.com');
+        $mail->addReplyTo('cfs.noahfainer@gmail.com');
 
         $mail->isHTML(true);
         $mail->Subject='PHP Mailer';
