@@ -32,7 +32,7 @@ function login($username, $password, $ip){
             $_SESSION['user_id'] = $id;
             $_SESSION['user_name'] = $found_user['user_fname'];
 
-            //TODO: finish the following lines so that when user logged in
+            
             // The user_ip column get updated by the $ip
             $update_query = 'UPDATE tbl_user SET user_ip = :ip WHERE user_id = :id';
             $update_set = $pdo->prepare($update_query);
